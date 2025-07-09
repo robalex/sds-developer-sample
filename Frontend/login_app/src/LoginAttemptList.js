@@ -1,7 +1,7 @@
 import React from "react";
 import "./LoginAttemptList.css";
 
-const LoginAttempt = ({login, password}) => <li>Name: {login}</li>;
+const LoginAttempt = ({login}) => <li>Name: {login}</li>;
 
 const LoginAttemptList = (props) => {
 	const [filter, setFilter] = React.useState("");
