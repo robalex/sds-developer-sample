@@ -35,9 +35,8 @@ namespace DeveloperSample.Algorithms
             {
                 return items[0];
             }
-            
-            var allButLastItem = string.Join(", ", items, 0, items.Length - 1);
-            return $"{allButLastItem} and {items[^1]}";
+
+            return $"{string.Join(", ", items, 0, items.Length - 1)} and {items[^1]}";
         }
     }
 }
