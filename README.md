@@ -8,3 +8,5 @@ This code exercise was completed with a few assumptions.
 </ol>
 
 I added some unit tests and error handling to the dotnet code as appropriate.
+
+To start the Frontend, navigate to the Frontend/login_app directory and run "npm install" and then run "npm start".
