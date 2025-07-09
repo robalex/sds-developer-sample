@@ -36,13 +36,8 @@ namespace DeveloperSample.Algorithms
                 return items[0];
             }
             
-            if (items.Length == 2)
-            {
-                return $"{items[0]} and {items[1]}";
-            }
-            
-            var allButLast = string.Join(", ", items, 0, items.Length - 1);
-            return $"{allButLast} and {items[^1]}";
+            var allButLastItem = string.Join(", ", items, 0, items.Length - 1);
+            return $"{allButLastItem} and {items[^1]}";
         }
     }
 }
