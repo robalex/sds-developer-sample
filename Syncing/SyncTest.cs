@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using Xunit;
@@ -15,7 +16,23 @@ namespace DeveloperSample.Syncing
             Assert.Equal(items.Count, result.Count);
         }
 
-        [Fact(Skip="Not implemented")]
+        [Fact]
+        public void CanInitializeEmptyCollection()
+        {
+            var debug = new SyncDebug();
+            var items = new List<string>();
+            var result = debug.InitializeList(items);
+            Assert.Empty(result);
+        }
+
+        [Fact]
+        public void InitializeListItemsCannotBeNull()
+        {
+            var debug = new SyncDebug();
+            Assert.Throws<ArgumentNullException>(() => debug.InitializeList(null));
+        }
+
+        [Fact]
         public void ItemsOnlyInitializeOnce()
         {
             var debug = new SyncDebug();
@@ -29,6 +46,13 @@ namespace DeveloperSample.Syncing
 
             Assert.Equal(100, count);
             Assert.Equal(100, dictionary.Count);
+        }
+
+        [Fact]
+        public void InitializeDictionaryGetItemCannotBeNull()
+        {
+            var debug = new SyncDebug();
+            Assert.Throws<ArgumentNullException>(() => debug.InitializeDictionary(null));
         }
     }
 }
